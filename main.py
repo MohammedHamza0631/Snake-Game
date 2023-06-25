@@ -4,7 +4,7 @@ import time
 
 
 pygame.init()
-SIZE = 40
+size = 40
 clock = pygame.time.Clock()
 
 
@@ -19,8 +19,8 @@ class Food():
         self.m_screen.blit(self.food, (self.food_x, self.food_y))
 
     def move_food(self):
-        self.food_x = random.randint(1, 24)*SIZE
-        self.food_y = random.randint(1, 19)*SIZE
+        self.food_x = random.randint(1, 24)*size
+        self.food_y = random.randint(1, 19)*size
 
 
 class Snake:
@@ -62,13 +62,13 @@ class Snake:
 
         # below this line we handle head of snake
         if self.direction == 'left':
-            self.snake_x[0] -= SIZE
+            self.snake_x[0] -= size
         elif self.direction == 'right':
-            self.snake_x[0] += SIZE
+            self.snake_x[0] += size
         elif self.direction == 'up':
-            self.snake_y[0] -= SIZE
+            self.snake_y[0] -= size
         elif self.direction == 'down':
-            self.snake_y[0] += SIZE
+            self.snake_y[0] += size
         self.draw_snake()
 
 
@@ -90,8 +90,8 @@ class Game:
         self.screen.blit(bg, (0, 0))
 
     def is_collision(self, x1, y1, x2, y2):
-        if x1 >= x2 and x1 < x2 + SIZE:
-            if y1 >= y2 and y1 < y2 + SIZE:
+        if x1 >= x2 and x1 < x2 + size:
+            if y1 >= y2 and y1 < y2 + size:
                 return True
         return False
     
